@@ -1,0 +1,16 @@
+{
+  "title": "Mailpriv",
+  "name": "mailpriv",
+  "version": "0.0.1",
+  "description": "A browser extension to get rid of spam mailing lists",
+  "main": "index.js",
+  "author": "Mozilla Webkeepers",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "Mozilla Public License v2.0",
+  "keywords": [
+    "jetpack"
+  ]
+}
