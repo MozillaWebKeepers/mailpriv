@@ -1,4 +1,5 @@
 var self = require("sdk/self");
+var contextMenu = require("sdk/context-menu");
 
 // a dummy function, to show how tests work.
 // to see how to test this function, look at test/test-index.js
@@ -23,5 +24,17 @@ var button = buttons.ActionButton({
 function handleClick(state) {
   tabs.open("http://www.saurabhbadhwar.xyz/");
 }
+
+var menuItem=contextMenu.Item({
+  label: "Report link",
+  context: contextMenu.SelectionContext(),
+  contentScript: 'self.on("click",function(){'+
+                 'var text = window.getSelection().toString();'+
+                 'self.postMessage(text);'+
+                 '});',
+  onMessage: function(selectionText){
+    console.log(selectionText);
+  }
+});
 
 exports.dummy = dummy;
